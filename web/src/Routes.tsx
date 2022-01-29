@@ -13,12 +13,14 @@ import UsersLayout from 'src/layouts/UsersLayout'
 const Routes = () => {
   return (
     <Router>
+      <Route path="/app{appRoute...}" page={AppPage} name="app" />
       <Set wrap={UsersLayout}>
         <Route path="/users/new" page={UserNewUserPage} name="newUser" />
         <Route path="/users/{id:Int}/edit" page={UserEditUserPage} name="editUser" />
         <Route path="/users/{id:Int}" page={UserUserPage} name="user" />
         <Route path="/users" page={UserUsersPage} name="users" />
       </Set>
+
       <Route path="/" page={HomePage} name="home" />
       <Route notfound page={NotFoundPage} />
     </Router>
